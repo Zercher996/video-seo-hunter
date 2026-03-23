@@ -1,43 +1,41 @@
 .container {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 20px;
+  right: 20px;
   z-index: 1000;
 }
 
 .button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 10px 20px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 600;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition);
 }
 
 .button:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-1px);
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
 }
 
 .button:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 .button.capturing {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--bg-hover);
 }
 
 .icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .tooltip {
@@ -45,22 +43,20 @@
   top: calc(100% + 8px);
   right: 0;
   padding: 8px 12px;
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
   font-size: 0.8rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-4px);
-  transition: var(--transition-fast);
+  transition: var(--transition);
 }
 
 .button:hover .tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
 .tooltip.success {
@@ -72,5 +68,5 @@
 }
 
 .tooltip.loading {
-  color: var(--color-text-secondary);
+  color: var(--text-muted);
 }

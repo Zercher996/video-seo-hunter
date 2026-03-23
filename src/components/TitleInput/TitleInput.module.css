@@ -1,57 +1,62 @@
 .container {
-  margin-bottom: 2rem;
+  margin-bottom: 48px;
 }
 
 .inputRow {
   display: flex;
   gap: 12px;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 720px;
 }
 
 .input {
   flex: 1;
-  padding: 14px 20px;
-  border: 2px solid transparent;
+  padding: 14px 18px;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   background: var(--bg-card);
   font-size: 1rem;
   color: var(--text-primary);
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-smooth);
+  transition: var(--transition);
   outline: none;
 }
 
 .input:focus {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-hover);
+  border-color: var(--border-hover);
+  background: var(--bg-hover);
 }
 
 .input::placeholder {
-  color: #b2bec3;
+  color: var(--text-muted);
 }
 
 .button {
   padding: 14px 28px;
   border: none;
   border-radius: var(--radius-md);
-  background: var(--gradient-button);
-  background-size: 200% 200%;
-  color: white;
-  font-size: 1rem;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition);
   white-space: nowrap;
 }
 
 .button:hover:not(:disabled) {
-  background-position: right center;
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-1px);
+  background: var(--text-secondary);
 }
 
 .button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .inputRow {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
 }

@@ -1,35 +1,30 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 16px 24px;
-  margin-bottom: 1.5rem;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
   background: var(--bg-card);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  animation: fadeInUp 0.3s ease;
-  flex-wrap: wrap;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
 }
 
 .preview {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 1;
 }
 
 .label {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
 }
 
 .keyword {
   font-weight: 700;
-  font-size: 1.1rem;
-  background: var(--gradient-hero);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .actions {
@@ -38,35 +33,46 @@
 }
 
 .confirmBtn {
-  padding: 8px 20px;
+  padding: 10px 20px;
   border: none;
-  border-radius: var(--radius-full);
-  background: var(--color-secondary);
-  color: white;
+  border-radius: var(--radius-md);
+  background: var(--text-primary);
+  color: var(--bg-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition);
 }
 
 .confirmBtn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+  background: var(--text-secondary);
 }
 
 .clearBtn {
-  padding: 8px 20px;
-  border: 2px solid #dfe6e9;
-  border-radius: var(--radius-full);
+  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
   background: transparent;
   color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 0.875rem;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition);
 }
 
 .clearBtn:hover {
-  border-color: var(--color-accent-coral);
-  color: var(--color-accent-coral);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
 }
