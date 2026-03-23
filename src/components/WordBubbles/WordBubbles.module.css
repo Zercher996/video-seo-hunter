@@ -1,0 +1,45 @@
+.container {
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.4s ease;
+}
+
+.hint {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.bubble {
+  padding: 10px 20px;
+  border: 2px solid var(--bubble-color);
+  border-radius: var(--radius-full);
+  background: var(--bubble-color-light);
+  color: var(--bubble-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  user-select: none;
+  outline: none;
+}
+
+.bubble:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bubble.selected {
+  background: var(--bubble-color);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--bubble-color) 40%, transparent);
+  animation: bounce 0.3s ease;
+}

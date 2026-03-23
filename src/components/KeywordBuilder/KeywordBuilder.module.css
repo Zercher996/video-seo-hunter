@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 24px;
+  margin-bottom: 1.5rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  animation: fadeInUp 0.3s ease;
+  flex-wrap: wrap;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.keyword {
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.confirmBtn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.confirmBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+}
+
+.clearBtn {
+  padding: 8px 20px;
+  border: 2px solid #dfe6e9;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.clearBtn:hover {
+  border-color: var(--color-accent-coral);
+  color: var(--color-accent-coral);
+}

@@ -1,0 +1,76 @@
+.container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button.capturing {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+  font-size: 1.1rem;
+}
+
+.tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  padding: 8px 12px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.8rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: var(--transition-fast);
+}
+
+.button:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tooltip.success {
+  color: #10b981;
+}
+
+.tooltip.error {
+  color: #ef4444;
+}
+
+.tooltip.loading {
+  color: var(--color-text-secondary);
+}
