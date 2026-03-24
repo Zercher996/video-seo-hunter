@@ -11,9 +11,9 @@ export default function ResultsPanel({ results }: Props) {
   if (results.length === 0) return null
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-results-container>
       {results.map((result) => (
-        <div key={result.keyword} className={styles.group}>
+        <section key={result.keyword} className={styles.group} data-keyword-group data-keyword={result.keyword}>
           <div className={styles.header}>
             <h2 className={styles.keyword}>{result.keyword}</h2>
             {result.status === 'success' && (
@@ -34,13 +34,13 @@ export default function ResultsPanel({ results }: Props) {
           )}
 
           {result.status === 'success' && result.videos.length > 0 && (
-            <div className={styles.grid}>
+            <div className={styles.grid} data-video-grid>
               {result.videos.map((video) => (
                 <VideoCard key={video.id} video={video} />
               ))}
             </div>
           )}
-        </div>
+        </section>
       ))}
     </div>
   )

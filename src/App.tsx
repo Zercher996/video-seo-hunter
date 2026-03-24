@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import { useWordSelector } from './hooks/useWordSelector'
 import { useYouTubeSearch } from './hooks/useYouTubeSearch'
 import TitleInput from './components/TitleInput/TitleInput'
@@ -11,7 +11,6 @@ import ScreenshotButton from './components/ScreenshotButton/ScreenshotButton'
 import styles from './App.module.css'
 
 export default function App() {
-  const appRef = useRef<HTMLDivElement>(null)
   const {
     words,
     selectedIndices,
@@ -45,8 +44,8 @@ export default function App() {
   }
 
   return (
-    <div ref={appRef} className={styles.app}>
-      <ScreenshotButton targetRef={appRef} />
+    <div className={styles.app}>
+      <ScreenshotButton />
       <header className={styles.hero}>
         <h1 className={styles.title}>Video SEO Hunter</h1>
         <p className={styles.subtitle}>

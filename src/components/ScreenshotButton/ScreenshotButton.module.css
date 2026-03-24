@@ -1,41 +1,58 @@
 .container {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 1rem;
+  right: 1rem;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .button {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  color: var(--text-primary);
-  font-size: 0.85rem;
-  font-weight: 500;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
+  transition: var(--transition-smooth);
 }
 
 .button:hover:not(:disabled) {
-  background: var(--bg-hover);
-  border-color: var(--border-hover);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
 }
 
 .button:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
 .button.capturing {
-  background: var(--bg-hover);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+
+.button.secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .icon {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .tooltip {
@@ -43,20 +60,22 @@
   top: calc(100% + 8px);
   right: 0;
   padding: 8px 12px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
+  background: var(--color-surface);
+  color: var(--color-text);
   font-size: 0.8rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition);
+  transform: translateY(-4px);
+  transition: var(--transition-fast);
 }
 
 .button:hover .tooltip {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .tooltip.success {
@@ -68,5 +87,26 @@
 }
 
 .tooltip.loading {
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 480px) {
+  .container {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .button.secondary {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .icon {
+    font-size: 1rem;
+  }
 }
